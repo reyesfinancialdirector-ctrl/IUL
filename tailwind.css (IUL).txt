@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors - Trust anchor + professional credibility */
+    --color-primary: #1B365D; /* navy-900 */
+    --color-primary-50: #EEF2F7;
+    --color-primary-100: #D4DEE9;
+    --color-primary-200: #A9BDD3;
+    --color-primary-300: #7E9CBD;
+    --color-primary-400: #537BA7;
+    --color-primary-500: #2E5984; /* secondary */
+    --color-primary-600: #1B365D; /* primary */
+    --color-primary-700: #152A4A;
+    --color-primary-800: #0F1E37;
+    --color-primary-900: #0A1324;
+
+    /* Secondary Colors - Supporting hierarchy + section backgrounds */
+    --color-secondary: #2E5984; /* blue-600 */
+    --color-secondary-50: #EFF4F9;
+    --color-secondary-100: #D9E6F2;
+    --color-secondary-200: #B3CDE5;
+    --color-secondary-300: #8DB4D8;
+    --color-secondary-400: #679BCB;
+    --color-secondary-500: #4182BE;
+    --color-secondary-600: #2E5984; /* secondary */
+    --color-secondary-700: #24476A;
+    --color-secondary-800: #1A3550;
+    --color-secondary-900: #102336;
+
+    /* Accent Colors - Premium gold for key benefits + success metrics */
+    --color-accent: #D4AF37; /* gold-500 */
+    --color-accent-50: #FAF7ED;
+    --color-accent-100: #F3EDCF;
+    --color-accent-200: #E7DB9F;
+    --color-accent-300: #DBC96F;
+    --color-accent-400: #CFB73F;
+    --color-accent-500: #D4AF37; /* accent */
+    --color-accent-600: #B8962E;
+    --color-accent-700: #8A7022;
+    --color-accent-800: #5C4A17;
+    --color-accent-900: #2E250B;
+
+    /* Background Colors */
+    --color-background: #FAFBFC; /* gray-50 */
+    --color-surface: #FFFFFF; /* white */
+
+    /* Text Colors */
+    --color-text-primary: #1A1A1A; /* gray-900 */
+    --color-text-secondary: #4A5568; /* gray-600 */
+
+    /* Status Colors */
+    --color-success: #10B981; /* green-500 */
+    --color-success-50: #ECFDF5;
+    --color-success-100: #D1FAE5;
+    --color-success-200: #A7F3D0;
+    --color-success-300: #6EE7B7;
+    --color-success-400: #34D399;
+    --color-success-500: #10B981; /* success */
+    --color-success-600: #059669;
+    --color-success-700: #047857;
+    --color-success-800: #065F46;
+    --color-success-900: #064E3B;
+
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-50: #FFFBEB;
+    --color-warning-100: #FEF3C7;
+    --color-warning-200: #FDE68A;
+    --color-warning-300: #FCD34D;
+    --color-warning-400: #FBBF24;
+    --color-warning-500: #F59E0B; /* warning */
+    --color-warning-600: #D97706;
+    --color-warning-700: #B45309;
+    --color-warning-800: #92400E;
+    --color-warning-900: #78350F;
+
+    --color-error: #EF4444; /* red-500 */
+    --color-error-50: #FEF2F2;
+    --color-error-100: #FEE2E2;
+    --color-error-200: #FECACA;
+    --color-error-300: #FCA5A5;
+    --color-error-400: #F87171;
+    --color-error-500: #EF4444; /* error */
+    --color-error-600: #DC2626;
+    --color-error-700: #B91C1C;
+    --color-error-800: #991B1B;
+    --color-error-900: #7F1D1D;
+
+    /* Border Colors */
+    --color-border: #E2E8F0; /* gray-200 */
+    --color-border-active: #D4AF37; /* accent */
+  }
+
+  body {
+    @apply font-body text-text-primary bg-background antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@layer components {
+  /* CTA Button Styles */
+  .btn-primary {
+    @apply font-cta font-bold px-8 py-4 rounded-lg bg-warning-500 text-white shadow-cta hover:bg-warning-600 hover:shadow-cta-hover transition-all duration-250 ease-in-out transform hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply font-cta font-semibold px-6 py-3 rounded-lg bg-primary-600 text-white shadow-sm hover:bg-primary-700 transition-all duration-250 ease-in-out;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-surface rounded-lg shadow-card p-6 border border-border;
+  }
+
+  .card-calculator {
+    @apply bg-surface rounded-xl shadow-calculator p-8 border border-border;
+  }
+
+  /* Form Input Styles */
+  .input-field {
+    @apply w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all duration-250 ease-in-out font-body;
+  }
+
+  .input-field-active {
+    @apply border-2 border-accent;
+  }
+
+  /* Section Styles */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-alt {
+    @apply bg-secondary-50 py-16 md:py-24;
+  }
+
+  /* Typography Utilities */
+  .headline-hero {
+    @apply font-headline text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary-600;
+  }
+
+  .headline-section {
+    @apply font-headline text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-primary-600;
+  }
+
+  .headline-card {
+    @apply font-headline text-2xl md:text-3xl font-semibold text-primary-600;
+  }
+
+  .body-large {
+    @apply font-body text-lg md:text-xl text-text-secondary leading-relaxed;
+  }
+
+  .body-regular {
+    @apply font-body text-base md:text-lg text-text-secondary leading-relaxed;
+  }
+
+  .stat-number {
+    @apply font-accent text-4xl md:text-5xl font-medium text-accent-500;
+  }
+
+  .testimonial-text {
+    @apply font-accent text-lg italic text-text-primary leading-relaxed;
+  }
+}
+
+@layer utilities {
+  /* Shadow Utilities */
+  .shadow-cta {
+    box-shadow: 0 4px 12px rgba(27, 54, 93, 0.15);
+  }
+
+  .shadow-cta-hover {
+    box-shadow: 0 6px 16px rgba(27, 54, 93, 0.25);
+  }
+
+  .shadow-calculator {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Animation Utilities */
+  .transition-250 {
+    transition-duration: 250ms;
+  }
+
+  .transition-300 {
+    transition-duration: 300ms;
+  }
+
+  .stagger-reveal {
+    animation: fadeInUp 300ms ease-in-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scroll Reveal Animation */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  }
+
+  .reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
